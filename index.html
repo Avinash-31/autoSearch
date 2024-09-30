@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <a href="#" onclick="yourlink()">PC Search</a>
+    <a href="#" onclick="yourlink()">Mobile Search</a>
+
+    <!-- give styles to byuttons and center them-->
+    <style>
+        a {
+            display: block;
+            width: 200px;
+            height: 50px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 50px;
+            margin: 10px auto;
+        }
+    </style>
+
+    <script>
+
+        function pcLink() {
+            const pcSearch = [
+                "https://www.bing.com/search?q=The+Marvels+2023&FORM=SNAPST&filters=sid:%2295d453f9-8a94-6176-d446-b860069795c8%22+fcid:%2279ffa96b-0a0b-6940-81f0-93d052929e93%22+fccat:%225%22&crslsl=0&efirst=1",
+                "https://www.bing.com/search?q=Guardians+of+the+Galaxy+Vol.+3+2023&FORM=SNAPST&filters=sid:%2212eab714-316c-1d19-5a93-66387f6f7924%22+fcid:%2279ffa96b-0a0b-6940-81f0-93d052929e93%22+fccat:%225%22",
+                "https://www.bing.com/search?q=Ant-Man+and+the+Wasp%3a+Quantumania+2023&FORM=SNAPST&filters=sid:%22c57b4af2-c0b4-b4b8-b6cc-e7fe395152c1%22+fcid:%2279ffa96b-0a0b-6940-81f0-93d052929e93%22+fccat:%225%22&crslsl=0&efirst=1",
+                "https://www.bing.com/search?q=Black+Panther%3a+Wakanda+Forever+2022&FORM=SNAPST&filters=sid:%22430d315f-dfe9-7847-7a44-349d018d83fb%22+fcid:%2279ffa96b-0a0b-6940-81f0-93d052929e93%22+fccat:%225%22&crslsl=0&efirst=1",
+                "https://www.bing.com/search?q=james+cameron&qs=n&form=QBRE&sp=-1&ghc=2&lq=0&pq=james+&sc=10-6&sk=&cvid=84EE5EA9F4EE48A787E2BA01E6CD3541&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=Avatar+2009&FORM=SNAPST&filters=sid:%22c83e84c4-22cb-d9a0-4c49-be7ea2385a40%22+fcid:%222882f883-3a32-314b-e15c-85b9bd4f42f7%22+fccat:%229%22&crslsl=0&efirst=1",
+                "https://www.bing.com/search?q=Terminator%3a+Dark+Fate+2019&FORM=SNAPST&filters=sid:%22a2b84239-a266-4b5d-8c15-d6219841b2fc%22+fcid:%222882f883-3a32-314b-e15c-85b9bd4f42f7%22+fccat:%229%22&crslsl=0&efirst=1",
+                "https://www.bing.com/search?q=Titanic%3a+Deleted+Scenes+2012&FORM=SNAPST&filters=sid:%221ea76dcc-33a9-d8d4-eaf3-cc0afb11fe0f%22+fcid:%222882f883-3a32-314b-e15c-85b9bd4f42f7%22+fccat:%229%22&crslsl=0&efirst=1",
+                "https://www.bing.com/search?q=Strange+Days+1995&FORM=SNAPST&filters=sid:%228dc4d57f-82ce-4f88-a837-b6b00f8ead16%22+fcid:%222882f883-3a32-314b-e15c-85b9bd4f42f7%22+fccat:%229%22&crslsl=1184&efirst=1",
+                "https://www.bing.com/search?q=stranger+things&qs=n&form=QBRE&sp=-1&lq=0&pq=stranger+thing&sc=10-14&sk=&cvid=125A04C1735647A2AE32A4F86643EAE4&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=wednesday&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=wednesday&sc=11-9&sk=&cvid=763730480C0442518E6A83246AC2BFC5&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=family+star&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=family+star&sc=11-11&sk=&cvid=6A46B90E30B840CBAE6BF319EA30EF3A&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=sitaramam&cvid=e9a13c1661804bb9a32c8c5ffeb015da&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQLhhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQgzMjgzajBqOagCALACAA&FORM=ANAB01&PC=HCTS",
+                "https://www.bing.com/search?q=rrr&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=rrr&sc=12-3&sk=&cvid=00ACD617D89A4F368B7D7C9D37E61831&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=ramcharan&qs=n&form=QBRE&sp=-1&lq=0&pq=ramcharan&sc=11-9&sk=&cvid=3579464938DF43E9A663828618CF1BE6&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=nithyamenon&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=nithyameno&sc=10-10&sk=&cvid=6C0A7F8E35394CC6802B95F3EEE1FB5B&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=trisha&qs=n&form=QBRE&sp=-1&lq=0&pq=trish&sc=10-5&sk=&cvid=AD55243808AF461EA47CE12A01A3EEC9&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=sushanth&qs=n&form=QBRE&sp=-1&lq=0&pq=sushant&sc=15-7&sk=&cvid=1EA44F3284C94593985664D952B4FB0C&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=sachin+khedekar%5C&qs=n&form=QBRE&sp=-1&ghc=2&lq=0&pq=sachin&sc=10-6&sk=&cvid=958D2CDBA9C04907B3F599327CE4F66A&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=sachin+tendulakr&qs=n&form=QBRE&sp=-1&lq=0&pq=sachin+tendulakr&sc=11-16&sk=&cvid=46A36CE419AB412CB995282B629BB082&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=Shane%20Warne&pq=sachin%20tendulakr&cvid=38312E5D47764C2DA0F61474174DA4D6&FORM=QBRE&qs=PASF&sc=5-16&sp=14&lq=0",
+                "https://www.bing.com/search?q=Rohit+Sharma&qs=MB&sk=SSE5&sc=10-0&cvid=7E8AB30F259D423BB2ACEFD4E4940BF0&FORM=QBRE&asbe=SSE&filters=ufn%3a%22Rohit+Sharma%22+sid%3a%2256bcfaf9-df53-4e77-1e38-f8a7da102c63%22&sp=6&ghc=1&lq=0",
+                "https://www.bing.com/search?q=modi&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=modi&sc=10-4&sk=&cvid=8179EF87B11D42858205A21292A8D6AE&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=bangkok&qs=n&form=QBRE&sp=-1&lq=0&pq=bangkok&sc=19-7&sk=&cvid=AD0F16F111594FA9954CD24B4FD88AB6&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=india&cvid=0db19585df3249c6a34aa9ab115582ea&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQABhAMgYIAhBFGDsyBggDEEUYOzIGCAQQIxgnMgYIBRAjGCcyBggGEAAYQDIGCAcQLhhAMgYICBAAGEDSAQc4MzlqMGo5qAIAsAIA&FORM=ANAB01&PC=HCTS",
+                "https://www.bing.com/search?q=hero&qs=n&form=QBRE&sp=-1&lq=0&pq=hero&sc=11-4&sk=&cvid=F3B09189D07341E89525B169DA3921E9&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=vande+bharat+express&qs=n&form=QBRE&sp=-1&ghc=2&lq=0&pq=vande+&sc=11-6&sk=&cvid=CEFBF7D17D2B42D8966403B9A237EBF8&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=supercop&qs=n&form=QBRE&sp=-1&ghc=2&lq=0&pq=super&sc=11-5&sk=&cvid=F21496A117774613B901B77F3FF7708E&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=indian+idol&filters=ufn%3a%22Indian+Idol+TV%22+sid%3a%221192a1f1-0963-f844-4d71-82e95a76e558%22&asbe=FT&qs=MB&pq=indian&sk=OS2AS4&sc=10-6&cvid=60DC815BFD364D53851BCCD00528073E&FORM=QBRE&sp=7&ghc=1&lq=0",
+                "https://www.bing.com/search?q=mahaan&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=mahaan&sc=11-6&sk=&cvid=F4A4F4EDBBC941B8AE482B90F066C40C&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=muttiah+muralitharan&filters=ufn%3a%22Muttiah+Muralitharan%22+sid%3a%2290b531cc-3a3e-678b-63fc-e230b9b090cb%22&asbe=SC&qs=MB&pq=muttaih&sc=10-7&cvid=42C9BBCFC1044953AA8CA3011A84AFF2&FORM=QBRE&sp=1&ghc=2&lq=0",
+                "https://www.bing.com/search?q=snapchat&cvid=5af5e23e92d349e29411428f0e46abbe&gs_lcrp=EgZjaHJvbWUqBggBEC4YQDIGCAAQRRg5MgYIARAuGEAyBggCEAAYQDIGCAMQABhAMgYIBBAAGEAyBggFEAAYQDIGCAYQABhAMgYIBxAAGEAyBggIEAAYQNIBCDI4MTVqMGo5qAIAsAIA&FORM=ANAB01&PC=HCTS",
+                "https://www.bing.com/search?q=Mukesh+ambhani+net+worth&form=ANSPH1&refig=4e2d573b399e4ece95806f16ade051c3&pc=HCTS",
+                "https://www.bing.com/search?q=anant+ambani&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=anant+amba&sc=11-10&sk=&cvid=773FB027B12943F684AF5411E3FC191C&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=ambani&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=ambani&sc=10-6&sk=&cvid=4B6BF51BC9F74442B285F930AD05919B&ghsh=0&ghacc=0&ghpl=",
+                "https://www.bing.com/search?q=radhika+merchant&qs=n&form=QBRE&sp=-1&ghc=2&lq=0&pq=radhika&sc=10-7&sk=&cvid=5CE59AE7CA98457EBA20AF64943A0D66&ghsh=0&ghacc=0&ghpl="
+            ];
+
+            for (let i = 0; i < pcSearch.length; i++) {
+                window.open(pcSearch[i]);
+                wait(6000 + Math.floor(Math.random() * (2000)));
+            };
+
+        };
+
+        function mobileLink() {
+
+            const mobileSearch = [
+                "https://www.bing.com/search?q=latest+political+news&FORM=SNAPST",
+                "https://www.bing.com/search?q=tropical+vacation+destinations&FORM=SNAPST",
+                "https://www.bing.com/search?q=top+technology+trends+2024&FORM=SNAPST",
+                "https://www.bing.com/search?q=business+growth+strategies+2024&FORM=SNAPST",
+                "https://www.bing.com/search?q=politics+and+economics+in+europe&FORM=SNAPST",
+                "https://www.bing.com/search?q=best+vacation+spots+in+asia&FORM=SNAPST",
+                "https://www.bing.com/search?q=artificial+intelligence+advancements&FORM=SNAPST",
+                "https://www.bing.com/search?q=small+business+ideas&FORM=SNAPST",
+                "https://www.bing.com/search?q=us+politics+2024+elections&FORM=SNAPST",
+                "https://www.bing.com/search?q=budget+vacation+destinations&FORM=SNAPST",
+                "https://www.bing.com/search?q=blockchain+technology+applications&FORM=SNAPST",
+                "https://www.bing.com/search?q=how+to+start+a+business&FORM=SNAPST",
+                "https://www.bing.com/search?q=global+political+events&FORM=SNAPST",
+                "https://www.bing.com/search?q=best+vacation+spots+for+families&FORM=SNAPST",
+                "https://www.bing.com/search?q=cloud+computing+trends+2024&FORM=SNAPST",
+                "https://www.bing.com/search?q=business+startups+funding&FORM=SNAPST",
+                "https://www.bing.com/search?q=political+leaders+worldwide&FORM=SNAPST",
+                "https://www.bing.com/search?q=beach+vacation+destinations&FORM=SNAPST",
+                "https://www.bing.com/search?q=cybersecurity+trends+2024&FORM=SNAPST",
+                "https://www.bing.com/search?q=successful+entrepreneurs&FORM=SNAPST",
+                "https://www.bing.com/search?q=political+debates+2024&FORM=SNAPST",
+                "https://www.bing.com/search?q=best+vacation+cruises&FORM=SNAPST",
+                "https://www.bing.com/search?q=latest+gadgets+2024&FORM=SNAPST",
+                "https://www.bing.com/search?q=how+to+scale+a+business&FORM=SNAPST",
+                "https://www.bing.com/search?q=global+politics+trends&FORM=SNAPST",
+                "https://www.bing.com/search?q=luxury+vacation+destinations&FORM=SNAPST",
+                "https://www.bing.com/search?q=virtual+reality+trends&FORM=SNAPST",
+                "https://www.bing.com/search?q=how+to+raise+business+capital&FORM=SNAPST",
+                "https://www.bing.com/search?q=political+conflicts+worldwide&FORM=SNAPST",
+                "https://www.bing.com/search?q=best+all-inclusive+vacation+packages&FORM=SNAPST",
+                "https://www.bing.com/search?q=tech+startups+to+watch+2024&FORM=SNAPST",
+                "https://www.bing.com/search?q=global+business+leaders&FORM=SNAPST"
+            ];
+
+            for (let i = 0; i < mobileSearch.length; i++) {
+                window.open(mobileSearch[i]);
+                wait(6000 + Math.floor(Math.random() * (2000)));
+            };
+
+        };
+
+        function wait(ms) {
+            var start = new Date().getTime();
+            var end = start;
+            while (end < start + ms) {
+                end = new Date().getTime();
+            }
+        }
+
+    </script>
+</body>
