@@ -400,5 +400,4 @@ question = [
     "What is the observer pattern?",
     "What is the purpose of garbage collection in programming?",
     "What is a stack overflow in programming?"
-
 ]
