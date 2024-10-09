@@ -4,20 +4,19 @@
   <main class="d-flex flex-column min-vh-100">
     <div class="container my-auto">
       <div class="row justify-content-center">
-        <div class="col-12 text-center">
+        <div class="col-2 text-center">
+          <div class="input-group mb-3 justify-content-center">
+            <input type="number" id="searchCount" class="form-control" placeholder="Number of searches?" aria-label="Number of searches" />
+          </div>
           <div class="input-group mb-3 justify-content-center">
             <button class="btn glass-button" onclick="autoSearch()" type="button" id="button-addon2">Auto Search on 💻</button>
           </div>
           <div class="input-group mb-3 justify-content-center">
             <button class="btn glass-button" onclick="autoSearchMobile()" type="button" id="button-addon2">Auto Search on 📱</button>
           </div>
-        </div>
-      </div>
-
-      {% comment %}button for auto_search in mobile devices{% endcomment %}
-      <div class="row justify-content-center">
-        <div class="col-12 text-center">
-          <!-- Additional content here -->
+          {% comment %} <div class="input-group mb-3 justify-content-center">
+            <button class="btn btn-danger glass-button" onclick="stopSearch()" type="button" id="button-addon3">Stop Search</button>
+          </div> {% endcomment %}
         </div>
       </div>
     </div>
@@ -25,13 +24,14 @@
 
   <script>
     function autoSearch() {
+      var searchCount = document.getElementById('searchCount').value
       fetch('/search/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'X-CSRFToken': '{{ csrf_token }}'
         },
-        body: JSON.stringify({ num_questions: 40 })
+        body: JSON.stringify({ num_questions: searchCount })
       })
         .then((response) => response.json())
         .then((data) => {
@@ -43,7 +43,9 @@
     }
     
     function autoSearchMobile() {
+      var searchCount = document.getElementById('searchCount').value
       alert('Please keep your device in the search bar for 10 seconds to perform automatic searches.')
+    
       setTimeout(() => {
         fetch('/search_mobile/', {
           method: 'POST',
@@ -51,7 +53,7 @@
             'Content-Type': 'application/json',
             'X-CSRFToken': '{{ csrf_token }}'
           },
-          body: JSON.stringify({ num_questions: 5 })
+          body: JSON.stringify({ num_questions: searchCount })
         })
           .then((response) => response.json())
           .then((data) => {
@@ -62,6 +64,7 @@
           })
       }, 10000) // 10 seconds delay
     }
+    
   </script>
 {% endblock %}
 {% block extra_css %}
